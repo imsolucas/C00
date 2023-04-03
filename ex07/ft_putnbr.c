@@ -6,36 +6,48 @@
 /*   By: djin <djin@42.fr>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:20:07 by djin              #+#    #+#             */
-/*   Updated: 2023/03/31 11:04:36 by djin             ###   ########.fr       */
+/*   Updated: 2023/04/03 17:10:18 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_putnb(int nb)
+void	loop(int *nb, char *c, char *a, long *i)
+{
+	while (*nb != 0)
+	{
+		*c = *nb % 10 + 48;
+		a[*i] = *c;
+		(*i)++;
+		*nb = *nb / 10;
+	}
+	while (*i > 0)
+	{
+		(*i)--;
+		write(1, &a[*i], 1);
+	}
+}
+
+void	ft_putnbr(int nb)
 {
 	char	c;
-	char	a[20];
+	char	a[50];
 	long	i;
 
 	i = 0;
 	if (nb == -2147483648)
+	{
 		write(1, "-2147483648", 11);
-	return ;
+		return ;
+	}
 	if (nb < 0)
-	nb = nb * -1;
-	write(1, "-", 1);
+	{
+		nb = nb * -1;
+		write(1, "-", 1);
+	}
 	if (nb == 0)
+	{
 		write(1, "0", 1);
-	while (nb != 0)
-	{
-	c = nb % 10 + 48;
-	a[i] = c;
-	i++;
-	nb = nb / 10;
+		return ;
 	}
-	while (i > 0)
-	{
-	i--;
-		write(1, &a[i], 1);
-	}
+	loop(&nb, &c, a, &i);
 }
