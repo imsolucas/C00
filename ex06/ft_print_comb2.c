@@ -39,8 +39,13 @@ void	ft_print_comb2(void)
 			write_a(a[1]);
 			if (a[0] != 98)
 				write(1, ", ", 2);
-		a[1]++;
+			a[1]++;
 		}
-a[0]++;
+		a[0]++;
 	}
 }
+
+// int	main(void)
+// {
+// 	ft_print_comb2();
+// }

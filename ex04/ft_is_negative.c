@@ -14,17 +14,17 @@
 
 void	ft_is_negative(int n)
 {
-	char	p;
-	char	ng;
+	char	positive;
+	char	negative;
 
-p = 80;
-ng = 78;
+	positive = 'P';
+	negative = 'N';
 	if (n < 0)
 	{
-		write (1, &ng, 1);
+		write (1, &negative, 1);
 	}
 	else
 	{
-		write (1, &p, 1);
+		write (1, &positive, 1);
 	}
 }

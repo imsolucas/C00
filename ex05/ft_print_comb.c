@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_write(int a, int b, int c);
-
 void	ft_print_comb(void)
 {
 	int	a;
@@ -47,3 +45,8 @@ void	ft_write(int a, int b, int c)
 	write(1, &b, 1);
 	write(1, &c, 1);
 }
+
+// int	main(void)
+// {
+// 	ft_print_comb();
+// }

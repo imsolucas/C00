@@ -12,17 +12,19 @@
 
 #include <unistd.h>
 
-void	ft_print_numbers(void);
-
 void	ft_print_numbers(void)
 {
 	int	p;
 
-p = 48;
+	p = '0';
 	while (p <= '9')
 	{	
-		write
-	(1, &p, 1);
-	p++ ;
+		write(1, &p, 1);
+		p++ ;
 	}
+}
+
+int	main(void)
+{
+	ft_print_numbers();
 }
